@@ -1,0 +1,24 @@
+{
+  "name": "css-naming-generator",
+  "version": "1.0.0",
+  "description": "css設計に基づいた命名をしてくれるジェネレータ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuvernacrew/css-naming-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuvernacrew/css-naming-generator/issues"
+  },
+  "homepage": "https://github.com/yuvernacrew/css-naming-generator#readme",
+  "devDependencies": {
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}
