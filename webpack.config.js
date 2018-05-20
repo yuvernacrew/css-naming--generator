@@ -15,7 +15,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [{
-          loader: 'babel-loader',
+          loader: 'babel-loader?blacklist[]=regenerator',
           options: {
             presets: ['env']
           }
@@ -30,7 +30,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue'],
-    alias: { 
+    alias: {
       vue: 'vue/dist/vue.common.js'
     }
   },
