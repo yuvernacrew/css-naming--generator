@@ -1,24 +1,25 @@
 var express = require('express');
 var router = express.Router();
 
-/* サンプルAPI①
- * http://localhost:3000/samples にGETメソッドのリクエストを投げると、
- * JSON形式で文字列を返す。
- */
-router.get('/', function(req, res, next) {
-  var param = {"値":"これはサンプルAPIです"};
-  res.header('Content-Type', 'application/json; charset=utf-8')
-  res.send(param);
+var watson = require('watson-developer-cloud');
+var language_translator = watson.language_translator({
+  username: '8ac2b58e-5476-4771-a9a3-d6fcf6e3379a',
+  password: 'KZnC4Nlxz243',
+  version: 'v2'
 });
 
-/* サンプルAPI②
- * http://localhost:3000/samples/hello にGETメソッドのリクエストを投げると、
- * JSON形式で文字列を返す。
- */
-router.get('/hello', function(req, res, next) {
-  var param = {"result":"Hello World !"};
-  res.header('Content-Type', 'application/json; charset=utf-8')
-  res.send(param);
+router.get('/:text', function(req, res, next) {
+  language_translator.translate({
+      text: req.params.text,
+      source: 'ja',
+      target: 'en'
+    }, function(err, translation) {
+      if (err)
+        return err
+      else
+        res.header('Content-Type', 'application/json; charset=utf-8')
+        res.send(translation.translations[0].translation);
+  });
 });
 
 module.exports = router;

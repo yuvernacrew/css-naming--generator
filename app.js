@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // 静的ファイルが配置されているディレクトリを設定
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'api')));
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter)
