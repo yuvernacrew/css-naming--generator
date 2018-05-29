@@ -15,9 +15,9 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: 'babel-loader?blacklist[]=regenerator',
             options: {
-              presets: [['env', { modules: false }]]
+              presets: ['env']
             }
           }
         ]

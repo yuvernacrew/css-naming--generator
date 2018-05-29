@@ -7,6 +7,7 @@ var sassMiddleware = require('node-sass-middleware');
 
 // ルーティングモジュール
 var indexRouter = require('./routes/index');
+var apiRouter = require('./routes/api');
 
 // アプリのインスタンス作成
 var app = express();
@@ -24,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/', indexRouter);
+app.use('/api', apiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

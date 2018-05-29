@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=css-naming-generator:* npm start && webpack --mode development --watch"
+    "dev": "DEBUG=css-naming-generator:* npm start",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
   },
   "dependencies": {
     "bulma": "^0.7.1",
