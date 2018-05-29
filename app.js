@@ -5,19 +5,23 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
+// ルーティングモジュール
 var indexRouter = require('./routes/index');
 
+// アプリのインスタンス作成
 var app = express();
 
-// view engine setup
+// アプリの設定
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
+// パラメータのパース方法
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// 静的ファイルが配置されているディレクトリを設定
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/', indexRouter);
 
