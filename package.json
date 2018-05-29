@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=css-naming-generator:* npm start"
+    "dev": "DEBUG=css-naming-generator:* npm start && webpack --mode development --watch"
   },
   "dependencies": {
-    "babel-loader": "^7.1.4",
     "bulma": "^0.7.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -16,9 +15,15 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "node-sass-middleware": "0.11.0",
+    "vue": "^2.5.16",
     "vue-loader": "^15.2.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "vue-template-compiler": "^2.5.16",
     "webpack": "^4.10.1",
     "webpack-cli": "^2.1.4"
   }
