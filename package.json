@@ -22,10 +22,12 @@
     "watson-developer-cloud": "^3.4.2"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "vue-class-component": "^6.2.0",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.10.1",
     "webpack-cli": "^2.1.4"

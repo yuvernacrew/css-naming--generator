@@ -7,9 +7,9 @@
   </head>
   <body>
     <div id="app">
-      <app></app>
-      <p>{{ hello }}</p>
-    </div> 
+      <input v-model.lazy="text" >
+      <p>Message is: {{ text_translate.data }}</p>
+    </div>
     <script src="/bundle.js"></script>
   </body>
 </html>
