@@ -16,6 +16,7 @@ new Vue({
     }
   },
   data: {
+    pref: "",
     text: "",
     text_translate : "",
   }
