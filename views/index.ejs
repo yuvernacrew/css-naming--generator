@@ -6,20 +6,28 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   </head>
   <body>
-    <h1>CSS Naming Generator</h1>
-    <div id="app">
-      <input type="radio" id="leyout" name="pref" value="l-" v-model="pref">
-      <label for="leyout">レイアウト</label>
-      <br>
-      <input type="radio" id="module" name="pref" value="" v-model="pref">
-      <label for="module">モジュール</label>
-      <br>
-      <input type="radio" id="status" name="pref" value="is-" v-model="pref">
-      <label for="status">状態</label>
-      <!-- 翻訳入力 -->
-      <p><input v-model.lazy="text" ></p>
-      <!-- 結果 -->
-      <p>css名 {{pref}}{{ text_translate.data }}</p>
+    <div class="container">
+      <h1>CSS Naming Generator</h1>
+      <div id="app">
+        <div class="columns">
+          <div class="column">
+            <input type="radio" id="leyout" name="pref" value="l-" v-model="pref">
+            <label for="leyout">レイアウト</label>
+          </div>
+          <div class="column">
+            <input type="radio" id="module" name="pref" value="" v-model="pref">
+            <label for="module">モジュール</label>
+          </div>
+          <div class="column">
+            <input type="radio" id="status" name="pref" value="is-" v-model="pref">
+            <label for="status">状態</label>
+          </div>
+        </div>
+        <!-- 翻訳入力 -->
+        <p><input v-model.lazy="text" ></p>
+        <!-- 結果 -->
+        <p>css名 {{pref}}{{ text_translate.data }}</p>
+      </div>
     </div>
     <script src="/bundle.js"></script>
   </body>
