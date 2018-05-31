@@ -4,31 +4,140 @@
     <title>css-naming-generator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="container">
       <h1>CSS Naming Generator</h1>
       <div id="app">
-        <div class="columns">
-          <div class="column">
-            <input type="radio" id="leyout" name="pref" value="l-" v-model="pref">
-            <label for="leyout">レイアウト</label>
-          </div>
-          <div class="column">
-            <input type="radio" id="module" name="pref" value="" v-model="pref">
-            <label for="module">モジュール</label>
-          </div>
-          <div class="column">
-            <input type="radio" id="status" name="pref" value="is-" v-model="pref">
-            <label for="status">状態</label>
+        <!-- 結果 -->
+        <p class="naming-result">{{ pref }}{{ text_translate.data }}</p>
+
+        <div class="tabs is-centered is-boxed css-navigator  is-medium">
+          <ul>
+            <li class="is-active">
+              <a href="#smacss">SMACSS</a>
+            </li>
+            <li>
+              <a href="#bem">BEM</a>
+            </li>
+            <li>
+              <a href="#flocss">FLOCSS</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 中身 -->
+        <div class="input-container">
+        <div class="container">
+          <div id="">
+            <p class="mb10">1. カテゴリを選択してください。</p>
+            <div class="columns mb40">
+              <div class="column button-radio">
+                <input type="radio" id="leyout" name="pref" value="l-" v-model="pref">
+                <label class="button is-large wid100" for="leyout">レイアウト</label>
+              </div>
+              <div class="column button-radio">
+                <input type="radio" id="module" name="pref" value=" " v-model="pref">
+                <label class="button is-large wid100" for="module">モジュール</label>
+              </div>
+              <div class="column button-radio">
+                <input type="radio" id="status" name="pref" value="is-" v-model="pref">
+                <label class="button is-large wid100" for="status">状態</label>
+              </div>
+              <div class="button-radio">
+                <input type="radio" id="none" name="pref" value="" v-model="pref" selected>
+              </div>
+            </div>
+            <!-- 翻訳入力 -->
+            <p class="mb10">2. コンテンツ名を日本語で入力してください。</p>
+            <div class="field mb40">
+              <div class="control">
+                <p><input class="input is-large" v-model.lazy="text" ></p>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- 翻訳入力 -->
-        <p><input v-model.lazy="text" ></p>
-        <!-- 結果 -->
-        <p>css名 {{pref}}{{ text_translate.data }}</p>
       </div>
     </div>
     <script src="/bundle.js"></script>
+    <style>
+      body {
+        background-color: #FD9297;
+        font-family: "Rounded Mplus 1c";
+      }
+
+      h1 {
+        font-family: 'Pacifico', cursive;
+        color: white;
+        font-size: 48px;
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 40px;
+      }
+
+      .css-navigator {
+        margin-bottom: 0 !important;
+      }
+
+      .naming-result {
+        background-color: white;
+        width: 80%;
+        margin-left: 10%;
+        text-align: center;
+        border-radius: 16px;
+        font-size: 48px;
+        height: 80px;
+        line-height: 80px;
+        margin-bottom: 40px;
+      }
+
+      .input-container {
+        background-color: white;
+        padding-top: 40px;
+      }
+
+      .tabs ul li a {
+        color: white !important;
+      }
+
+      .tabs ul .is-active a {
+        color: #333 !important;
+      }
+
+      .tabs a:hover {
+        background-color: #FEA4A9 !important;
+      }
+
+      .container {
+        width: 80%;
+        margin-left: 10%;
+      }
+
+      .button-radio input[type="radio"] {
+        display:none;
+      }
+
+      .button-radio input[type="radio"]:checked + label {
+        background-color: #FD9297;
+        color: white;
+      }
+
+      .wid100 {
+        width: 100%;
+      }
+
+      .mb10 {
+        margin-bottom: 10px !important;
+      }
+
+      .mb20 {
+        margin-bottom: 20px !important;
+      }
+
+      .mb40 {
+        margin-bottom: 40px !important;
+      }
+    </style>
   </body>
 </html>

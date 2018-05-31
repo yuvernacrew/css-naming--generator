@@ -18,7 +18,7 @@ router.get('/:text', function(req, res, next) {
         return err
       else
         res.header('Content-Type', 'application/json; charset=utf-8')
-        res.send(translation.translations[0].translation);
+        res.send( translation.translations[0].translation.replace(/\s+/g,'-') );
   });
 });
 
